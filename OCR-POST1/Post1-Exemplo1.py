@@ -1,21 +1,21 @@
 import pytesseract as ocr
 import cv2
 
-def visualizar(imagem):
-    cv2.imshow("Imagem_1", imagem)
+
+def visualizar(image_path):
+    imagem = cv2.imread(image_path)
+    cv2.imshow("Imagem 1", imagem)
     cv2.waitKey(0)
     cv2.destroyAllWindows()
+    return imagem
 
 
-def OCR(imagem_ocr):
-    print(ocr.image_to_string(imagem_ocr))
-
+def OCR(imagem):
+    print(ocr.image_to_string(imagem))
 
 
 if __name__=="__main__":
     ocr.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
-    url_imagem = r"D:\Arquivos Pessoais\Faculdade\Python\Tesseract-Curso\imagens\Imagem_1.png"
-    imagem = cv2.imread(url_imagem)
-    
-    visualizar(imagem)
+    image_path = r"D:\Arquivos Pessoais\Faculdade\Python\Tesseract\imagens\Imagem_2.png"
+    imagem  = visualizar(image_path)
     OCR(imagem)
