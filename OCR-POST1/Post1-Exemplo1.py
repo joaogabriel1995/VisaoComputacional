@@ -11,7 +11,7 @@ def visualizar(image_path):
 
 
 def OCR(imagem):
-    print(ocr.image_to_string(imagem))
+    print(ocr.image_to_string(imagem, lang="por"))
 
 
 if __name__=="__main__":
