@@ -22,7 +22,9 @@ class BoxTexto:
         cv2.waitKey(0)
         cv2.destroyAllWindows()
 
+
     def escreve_texto(self, texto, x, y, img, fonte=r"D:\Arquivos Pessoais\Faculdade\Python\Tesseract\Fontes\calibri.ttf", tamanho_texto=32):
+        
         fonte = ImageFont.truetype(fonte, tamanho_texto) 
         img_pil = Image.fromarray(img) #estamos trabalhando com um tipo numpy.ndarray precisamos converter para o formato do PIL imagem.
         draw = ImageDraw.Draw(img_pil) #Passamos a imagem que queremos fazer o desenho em cima.
